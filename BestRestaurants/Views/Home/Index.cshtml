@@ -1,0 +1,15 @@
+@{
+    Layout = "_Layout";
+}
+    <header class="homepage-header">
+        <div class="container pt-4">
+            <h1 class="logo">Rstack</h1>
+            <div class="homepage-header-content">
+                <h1>Organize your favourite restaurants</h1>
+                <p>
+                    @Html.ActionLink("Restaurants" , "Index" , "Restaurants")
+                    @Html.ActionLink("Cuisines" , "Index" , "Cuisines")
+                </p>
+            </div>
+        </div>
+    </header>
