@@ -1,15 +1,52 @@
 @{
     Layout = "_Layout";
 }
-    <header class="homepage-header">
-        <div class="container pt-4">
-            <h1 class="logo">Rstack</h1>
-            <div class="homepage-header-content">
-                <h1>Organize your favourite restaurants</h1>
-                <p>
-                    @Html.ActionLink("Restaurants" , "Index" , "Restaurants")
-                    @Html.ActionLink("Cuisines" , "Index" , "Cuisines")
-                </p>
-            </div>
+<header class="homepage-header">
+    <div class="container pt-4">
+        <h1 class="logo">Rstack</h1>
+        <p class="text-end"><a class="about-link" href="#homepage-about">About</a></p>
+        <div class="homepage-header-content">
+            <h1>Organize your favourite restaurants</h1>
+            <p>
+                @Html.ActionLink("Restaurants" , "Index" , "Restaurants")
+                @Html.ActionLink("Cuisines" , "Index" , "Cuisines")
+            </p>
         </div>
-    </header>
+    </div>
+</header>
+
+<section class="homepage-body bg-light">
+    <div id="homepage-about">
+        <h1 class="text-center"><span class="heading-span">A</span>bout Us</h1>
+        <p class="text-center"><span>Rstack</span> is a web application which helps and allows users to keep record of their favourite
+            restaurants. Rstack stands for Restaurant Stack , Rstack has millions of customers all over the world</p>
+    </div>
+    <div id="homepage-steps">
+        <h1 class="text-center"><span class="heading-span">H</span>ow to use Rstack</h1>
+        <div>
+            <p class="h4">You can use this app in various ways</p>
+            <ul>
+                <li><span>Step1: </span>Click on restaurants @Html.ActionLink("Restaurants" , "Index" , "Restaurants")
+                </li>
+                <li><span>Step2: </span>You will see different restaurants</li>
+                <li><span>Step3: </span>You can add a restaurants</li>
+                <li><span>Step4: </span>You can edit the restaurants</li>
+            </ul>
+        </div>
+        <div>
+
+        <p class="h4 text-center">The other way to do it</p>
+        <ul>
+            <li><span>Step1: </span>Click on Cuisines @Html.ActionLink("Cuisines" , "Index" , "Cuisines")</li>
+            <li><span>Step2: </span>You will see some default cuisines</li>
+            <li><span>Step3: </span>You can click on a cuisine to see the restaurants registered under it</li>
+            <li><span>Step4: </span>You can add cuisine</li>
+        </ul>
+        </div>
+        
+ 
+@* <i class="fa-solid fa-chef text-dark"></i> *@
+ 
+<i class="fa-solid fa-star text-primary"></i>
+    </div>
+</section>
