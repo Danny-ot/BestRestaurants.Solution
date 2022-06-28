@@ -1,0 +1,45 @@
+@{
+    Layout = "_Layout";
+}
+@model BestRestaurants.Models.Restaurant;
+
+<div class="restaurant-form pt-4">
+    <div class="container text-center">
+        <h1 class="text-light">Create New Cuisine</h1>
+        <p class="text-end">@Html.ActionLink("Back" , "Index")</p>
+    @using (Html.BeginForm())
+    {
+        <div class="form-group mt-3">
+            @Html.LabelFor(model => model.Name , new{ @class = "form-label h6 mt-2"})
+            @Html.TextBoxFor(model => model.Name , new{ @class = "form-control text-center"})
+        </div>
+
+        <div class = "form-group">
+            @Html.LabelFor(model => model.Cuisine , new{ @class = "form-label h6 mt-2"})
+            @Html.DropDownList("CuisineId")
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description , new{ @class = "form-label h6 mt-2"})
+            @Html.TextAreaFor(model => model.Description , new{ @class = "form-control text-center"})
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address , new{ @class = "form-label h6 mt-2"})
+            @Html.TextBoxFor(model => model.Address , new{ @class = "form-control text-center"})
+        </div>
+        <div class = "form-group">
+            @Html.LabelFor(model => model.Country , new{ @class = "form-label h6 mt-2"})
+            @Html.TextBoxFor(model => model.Country , new{ @class = "form-control text-center"})
+        </div>
+        <div class = "form-group">
+            @Html.LabelFor( model => model.PaymentForm , "Payment Method e.g Naira" , new{ @class = "form-label h6 mt-2"})
+            @Html.TextBoxFor(model => model.PaymentForm , new{ @class = "form-control text-center"})
+        </div>
+        <div class = "form-group">
+            @Html.LabelFor(model => model.ServiceOffered , "Service Offered e.g Free-wifi" , new{ @class = "form-label h6 mt-2"})
+            @Html.TextBoxFor(model => model.ServiceOffered , new{ @class = "form-control text-center"})
+        </div>
+        <input value="Save" class="btn" type="submit">
+    }
+    </div>
+</div>

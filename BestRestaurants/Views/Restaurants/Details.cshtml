@@ -1,0 +1,46 @@
+@{
+    Layout = "_Layout";
+}
+@using BestRestaurants.Models;
+@model BestRestaurants.Models.Restaurant
+<header class="background-header">
+    <div class="container">
+        <p class="text-end">@Html.ActionLink("Back To Restaurants" , "Index")</p>
+        <div>
+            <h1 class="text-center">@Html.DisplayFor(model => model.Name)</h1>
+        </div>
+    </div>
+
+</header>
+<section class="restaurant-details-body">
+    <div class="container">
+        <p>@Html.DisplayFor(model => model.Description)</p>
+        <p><span>@Html.DisplayNameFor(model => model.Cuisine)</span> : @Html.DisplayNameFor(model => model.Cuisine.Name)
+        </p>
+        <p><span>@Html.DisplayNameFor(model => model.Country) : </span>@Html.DisplayFor(model => model.Country)</p>
+        <p><span>@Html.DisplayNameFor(model => model.Address) : </span>@Html.DisplayFor(model => model.Address)</p>
+        <p><span>Other Services : </span>@Html.DisplayFor(model => model.ServiceOffered)</p>
+        <p><span>Payment Method : </span>@Html.DisplayFor(model => model.PaymentForm)</p>
+        <p class="h4 mt-5 app-default">Here are the reviews of @Model.Name</p>
+        <div class="card-div restaurant-reviews">
+            @foreach (var review in Model.Reviews)
+            {
+                <div class="review-card">
+                    <p>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </p>
+                    <p>@review.ReviewDescription</p>
+                </div>
+            }
+        </div>
+        <div class="delete-update-btn">
+            <p class="text-center add-cuisine-btn">@Html.ActionLink("Update" , "Edit" , new {id = Model.RestaurantId})
+            </p>
+            <p class="text-center add-cuisine-btn">@Html.ActionLink("Delete" , "Delete" , new {id = Model.RestaurantId})</p>
+        </div>
+    </div>
+</section>

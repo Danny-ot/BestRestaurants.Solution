@@ -1,0 +1,47 @@
+@{
+    Layout = "_Layout";
+}
+
+@using BestRestaurants.Models;
+@model List<BestRestaurants.Models.Restaurant>
+
+<header class="restaurant-header background-header">
+    <div class="container">
+        <p class="text-end">@Html.ActionLink("Home" , "Index" , "Home")</p>
+        <div>
+            <h1 class="text-center">Recorded Restaurants</h1>
+        </div>
+    </div>
+
+</header>
+
+<section class="restaurant-body">
+    <div class="container">
+        @if(Model.Count == 0)
+        {
+            <div class="no-element">
+                <h1>There Are No Restaurants Yet</h1>
+            </div>
+        }
+        else
+        {
+            <h4 class="text-center mt-3">Click on the name to see the details</h4>
+            <div class="restaurant-card-div card-div">
+                @foreach(var restaurant in Model)
+                {
+                    <div class = "restaurant-card">
+                       <i class="fa-solid fa-utensils"></i>
+                       <h1 class="text-center">@restaurant.Name</h1>
+                       <p>Country: @restaurant.Country</p>
+                       <p>Cuisine: @restaurant.Cuisine.Name</p>
+                       <p>@Html.ActionLink("Full Details" , "Details" , new{id = restaurant.RestaurantId})</p>
+                    </div>
+                }
+            </div>
+        }
+        <p class="text-center add-cuisine-btn">
+            @Html.ActionLink("Add new Restaurants" , "Create") 
+            @Html.ActionLink("Add Comment" , "Create" , "Reviews") 
+            </p>
+    </div>
+</section>
