@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary-color: #E38B0B;
+    --poppins-fontfamily: 'Poppins', arial;
+}
+
+/************************ Default Styles ***************/
+
+input[type = "submit"]{
+    background-color: var(--primary-color);
+    margin-top: .6rem;
+    padding: .5rem 1.4rem !important;
+    color: white;
+}
+
+select{
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        text-align: center;
+}
+
+select :focus{
+    border: 1px solid hsl(210, 14%, 50%);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-group{
+    margin-top: 1rem;
+}
+a{
+    text-decoration: none;
+}
+
+i{
+    cursor: pointer;
+}
+
+span{
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.app-default{
+    color: var(--primary-color);
+}
+/************************ Homepage Styles ********************************/
+
+.homepage-header , .cuisine-form , .restaurant-form{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.363),rgba(4, 9, 30, 0.349)) , url(../images/foodbackground.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.restaurant-form{
+    height: auto !important;
+}
+
+.logo{
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+.homepage-header-content{
+    margin-top: 11rem;
+}
+
+.homepage-header-content>h1{
+    font-size: 2.8rem;
+}
+
+.homepage-header-content>p{
+    margin-top: 1.3rem;
+
+}
+.homepage-header-content a{
+    color: #fff;
+    padding: .4rem .6rem;
+    border-radius: .4rem;
+}
+
+.homepage-header-content > p > a:first-of-type{
+    background-color: var(--primary-color);
+    font-size: 1.4rem;
+    transition: .5s;
+}
+
+.homepage-header-content > p > a:first-of-type:hover{
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+.homepage-header-content > p > a:last-of-type , .about-link{
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    transition: .5s;
+}
+
+.homepage-header-content > p > a:last-of-type:hover , .about-link{
+    color: #fff;
+}
+
+.about-link{
+    cursor: pointer;
+}
+
+.homepage-body{
+    padding: 4rem;
+}
+
+#homepage-steps{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#homepage-steps>div{
+    width: 400px;
+}
+
+.heading-span{
+    font-size: 3rem;
+}
+
+
+#homepage-steps ul{
+    list-style-type: none;
+}
+
+#homepage-about>p{
+    font-size: 1.3rem;
+}
+
+
+/*************************** Cuisine Styles ***************/
+
+.background-header{
+    background-image: linear-gradient(rgba(4, 9, 30, 0.363),rgba(4, 9, 30, 0.349)) , url(../images/foodbackground.jpg);
+    width: 100%;
+    height: 30vh;
+    background-position: center;
+    background-size: cover;
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.background-header>h1 {
+    font-size: 4rem;
+}
+
+.background-header a{
+    font-size: 1.4rem;
+    color: #fff;
+    transition: .5s;
+}
+
+.background-header a:hover{
+    color: var(--primary-color);
+}
+
+.no-element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 43vh);
+    color: gray;
+}
+
+.add-cuisine-btn>a{
+    background-color: var(--primary-color);
+    padding: .9rem 1.2rem;
+    color: #fff;
+    transition: .2s;
+    border-radius: 4px;
+}
+
+.add-cuisine-btn>a:hover{
+    background-color: rgb(32, 32, 32);
+}
+
+.cuisine-body>.container>h4{
+    color: var(--primary-color);
+    margin-top: .8rem;
+}
+
+.card-div{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(200px , 350px));
+    gap: 2rem;
+    margin: 3rem 0;
+    justify-content: center;
+}
+
+.cuisine-card{
+    background-color: #000;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cuisine-card>i{
+    font-size: 4rem;
+    color: var(--primary-color);
+}
+
+.cuisine-card > a{
+    font-size: 1.4rem;
+    color: #fff;
+    margin-top: .8rem;
+    transition: .3s;
+}
+
+.cuisine-card > a:hover{
+    color: var(--primary-color);
+}
+
+.cuisine-delete{
+    padding: 10rem;
+    text-align: center;
+}
+
+.cuisine-delete > p{
+    text-align: right;
+    font-size: 1.5rem;
+}
+
+.cuisine-delete > p > a{
+    color: #000;
+}
+
+.cuisine-delete > p > a:hover{
+    color: var(--primary-color);
+}
+
+.cuisine-delete > h1{
+    margin-bottom: 1.2rem;
+}
+
+.delete-div > input{
+    cursor: pointer;
+    font-size: 1.0rem;
+    transition: .5s;
+}
+
+.delete-div > input:hover{
+    background-color: #000;
+}
+
+
+/*********************** Restaurant Styles ************/
+.restaurant-card{
+    background-color: #000;
+    padding: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.restaurant-card > i{
+    font-size: 4rem;
+    text-align: center;
+}
+
+.restaurant-card > h1{
+    font-size: 2rem;
+    color: #fff;
+    margin-top: .4rem;
+}
+
+.restaurant-card > p{
+    font-size: 1.5rem;
+}
+
+.restaurant-card > p > a{
+    background-color: #fff;
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: .5s;
+}
+
+.restaurant-card > p > a:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.delete-update-btn{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.restaurant-details-body > .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    font-size: 1.5rem;
+}
+
+.restaurant-details-body > div > p:nth-child(1){
+    font-weight: bold;
+    margin-bottom: .9rem;
+}
+
+.restaurant-details-body > div > p{
+    margin-top: .9rem;
+}
+.restaurant-details-body > div > .delete-update-btn{
+    margin-top: 2rem;
+    font-size: 1.15rem;
+}
+
+
+/*********************** Reviews Styles ***************/
+.restaurant-reviews{
+    margin-top: .7rem !important;
+    background-color: #8f8e8e;
+    padding: 2rem;
+}
+
+.restaurant-reviews > .review-card{
+    text-align: center;
+}
+
+.restaurant-reviews > .review-card > p > i {
+    color: gold;
+}
+
+.restaurant-reviews > .review-card > p:last-of-type{
+    font-size: 2rem;
+}
+/*********************** Footer Styles ****************/
+
+.footer-div{
+    background-color: #0B1015;
+    width: 100%;
+    height: 20vh;
+    /* text-align: ; */
+}
+
+
+
+/************************* Media Query ******************/
+
+@media screen and (max-width: 700px){
+    .homepage-header .logo{
+        padding-left: 3rem;
+        font-size: 2.3rem;
+    }
+    .homepage-header-content>h1{
+        font-size: 2.3rem;
+    }
+    
+    .homepage-header-content a{
+        font-size: 1.3rem;
+    }
+
+    .background-header>h1{
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .homepage-header-content a{
+        font-size: .9rem;
+    }
+    .background-header>h1{
+        font-size: 2rem;
+    }
+}
