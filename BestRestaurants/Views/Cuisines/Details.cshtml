@@ -1,0 +1,49 @@
+@{
+    Layout = "_Layout";
+}
+
+@using BestRestaurants.Models;
+@model BestRestaurants.Models.Cuisine
+
+<header class="background-header cuisine-header">
+    <div class="container">
+        <p class="text-end">@Html.ActionLink("Back To Cuisine" , "Index")</p>
+        <div>
+            <h1 class="text-center">@Model.Name Cuisine</h1>
+        </div>
+    </div>
+
+</header>
+
+<section class="restaurant-body">
+    <div class="container">
+        @if(Model.Restaurants.Count == 0)
+        {
+            <div class="no-element">
+                <h1>There Are No Restaurants Yet</h1>
+            </div>
+        }
+        else
+        {
+            <h4 class="text-center mt-3">Here are the restaurants under the @Model.Name Cuisine</h4>
+            <div class="restaurant-card-div card-div">
+                @foreach(var restaurant in Model.Restaurants)
+                {
+                    <div class = "restaurant-card">
+                       <i class="fa-solid fa-utensils"></i>
+                       <h1 class="text-center">@restaurant.Name</h1>
+                       <p>Country: @restaurant.Country</p>
+                       <p>Cuisine: @restaurant.Cuisine.Name</p>
+                       <p>@Html.ActionLink("Full Details" , "Details" , "Restaurants" , new{id = restaurant.RestaurantId})</p>
+                    </div>
+                }
+            </div>
+        }
+        <div class="delete-update-btn">
+            <p class="text-center add-cuisine-btn">@Html.ActionLink("Update Cuisine" , "Edit" , new {id = Model.CuisineId})</p>
+        <p class="text-center add-cuisine-btn">@Html.ActionLink("Delete Cuisine" , "Delete" , new {id = Model.CuisineId})</p>
+        </div>
+        
+    </div>
+</section>
+

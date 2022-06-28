@@ -1,0 +1,19 @@
+@{
+    Layout = "_Layout";
+}
+@model BestRestaurants.Models.Cuisine;
+
+<div class="cuisine-form pt-4">
+    <div class="container text-center">
+        <h1 class="text-light">Create New Cuisine</h1>
+    @using (Html.BeginForm())
+    {
+        <div class="form-group mt-5">
+            @Html.LabelFor(model => model.Name , new{ @class = "form-label h4"})
+            @Html.TextBoxFor(model => model.Name , new{ @class = "form-control mt-2 text-center"})
+            <input value="Save" class="btn" type="submit">
+        </div>
+    }
+    </div>
+    
+</div>

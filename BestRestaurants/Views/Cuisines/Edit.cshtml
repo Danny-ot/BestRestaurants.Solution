@@ -1,0 +1,19 @@
+@{
+    Layout = "_Layout";
+}
+@model BestRestaurants.Models.Cuisine;
+
+<div class="cuisine-form pt-4">
+    <div class="container text-center">
+        <h1 class="text-light">Edit @Model.Name</h1>
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.CuisineId);
+        <div class="form-group mt-5">
+            @Html.LabelFor(model => model.Name , new{ @class = "form-label h4"})
+            @Html.EditorFor(model => model.Name , new{ @class = "form-control mt-2 text-center"})
+            <input value="Save" class="btn" type="submit">
+        </div>
+    }
+    </div>
+    

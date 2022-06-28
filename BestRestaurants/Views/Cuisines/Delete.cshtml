@@ -1,0 +1,17 @@
+@{
+    Layout = "_Layout";
+}
+@model BestRestaurants.Models.Cuisine;
+
+<div class="cuisine-delete">
+    <p class="text-end">@Html.ActionLink("Back" , "Details" , new{ id = Model.CuisineId})</p>
+    <h1>Are You Sure That You Want To Delete This?</h1>
+    <h2>@Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Name)</h2>
+    @using (Html.BeginForm())
+    {
+        <div class="delete-div">
+            <input type="submit" value="Delete" class="btn">
+        </div>
+    }
+
+</div>
