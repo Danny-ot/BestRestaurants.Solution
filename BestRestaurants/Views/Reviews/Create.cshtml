@@ -1,0 +1,23 @@
+@{
+    Layout = "_Layout";
+}
+@model BestRestaurants.Models.Review;
+
+<div class="cuisine-form pt-4">
+    <div class="container text-center">
+        <h1 class="text-light">Add Comment</h1>
+    @using (Html.BeginForm())
+    {
+        <div class="form-group mt-5">
+            @Html.LabelFor(model => model.Restaurant , new{ @class = "form-label h4"})
+            @Html.DropDownList("RestaurantId")
+        </div>
+        <div class="form-group mt-5">
+            @Html.LabelFor(model => model.ReviewDescription , new{ @class = "form-label h4"})
+            @Html.TextAreaFor(model => model.ReviewDescription, new{ @class = "form-control mt-2 text-center"})
+            <input value="Save" class="btn" type="submit">
+        </div>
+    }
+    </div>
+    
+</div>
